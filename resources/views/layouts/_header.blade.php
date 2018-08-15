@@ -13,33 +13,19 @@
         <li class="nav-item dropdown px-3">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                @lang('ip.settings')
+                Menu DropDown
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            &nbsp;
-            {{-- <a class="dropdown-item" href="{{ route('addons.index') }}">@lang('ip.addons')</a>
-                <a class="dropdown-item" href="{{ route('currencies.index') }}">@lang('ip.currencies')</a>
-                <a class="dropdown-item" href="{{ route('customFields.index') }}">@lang('ip.custom_fields')</a>
-                <a class="dropdown-item" href="{{ route('companyProfiles.index') }}">@lang('ip.company_profiles')</a>
-                <a class="dropdown-item" href="{{ route('export.index') }}">@lang('ip.export_data')</a>
-                <a class="dropdown-item" href="{{ route('groups.index') }}">@lang('ip.groups')</a>
-                <a class="dropdown-item" href="{{ route('import.index') }}">@lang('ip.import_data')</a>
-                <a class="dropdown-item" href="{{ route('itemLookups.index') }}">@lang('ip.item_lookups')</a>
-                <a class="dropdown-item" href="{{ route('mailLog.index') }}">@lang('ip.mail_log')</a>
-                <a class="dropdown-item" href="{{ route('paymentMethods.index') }}">@lang('ip.payment_methods')</a>
-                <a class="dropdown-item" href="{{ route('taxRates.index') }}">@lang('ip.tax_rates')</a>
-                <a class="dropdown-item" href="{{ route('users.index') }}">@lang('ip.user_accounts')</a>
-            <a class="dropdown-item" href="{{ route('settings.index') }}">@lang('ip.system_settings')</a> 
-                @foreach (config('fi.menus.system') as $menu)
-                    @if (view()->exists($menu))
-                        @include($menu)
-                    @endif
-                @endforeach--}}
+                {{--<a class="dropdown-item" href="{{ route('projects.index') }}">Projects</a>
+                <a class="dropdown-item" href="{{ route('customers.index') }}">Customers</a>
+                <a class="dropdown-item" href="{{ route('employees.index') }}">Employees</a>--}}
             </div>
         </li>
+    </ul>
+    <ul class="nav navbar-nav ml-auto d-md-down-none">
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle pr-3" data-toggle="dropdown" href="#" role="button"
-               aria-haspopup="true" aria-expanded="false">
+               aria-haspopup="true" aria-expanded="false">Profile Area (image and username)
                 @if (config('fi.displayProfileImage'))
                     <img src="{{ $profileImageUrl }}" alt="User Image"/>
                 @else
