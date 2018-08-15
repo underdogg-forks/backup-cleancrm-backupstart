@@ -45,6 +45,8 @@ class AppServiceProvider extends ServiceProvider
 
             if (file_exists($viewsPath)) {
                 $this->app->view->addLocation($viewsPath);
+            } else {
+dd($viewsPath);
             }
 
 
