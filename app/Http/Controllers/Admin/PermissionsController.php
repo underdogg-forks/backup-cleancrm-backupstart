@@ -9,7 +9,7 @@ use App\Models\Role;
 use App\Models\Permission;
 use Illuminate\Support\Facades\DB;
 
-class PermissionController extends Controller
+class PermissionsController extends Controller
 {
     // Permission Listing Page
     public function index()
@@ -23,7 +23,7 @@ class PermissionController extends Controller
             'permissions' => $permissions,
         ];
 
-        return view('admin.permission.perm_list')->with($params);
+        return view('admin.permissions.perm_list')->with($params);
     }
 
     // Permission Create Page
@@ -34,7 +34,7 @@ class PermissionController extends Controller
             'title' => 'Create Permission',
         ];
 
-        return view('admin.permission.perm_create')->with($params);
+        return view('admin.permissions.perm_create')->with($params);
     }
 
     // Permission Store to DB
@@ -53,7 +53,7 @@ class PermissionController extends Controller
             'description' => $request->input('description'),
         ]);
 
-        return redirect()->route('permission.index')->with('success', "The Permission <strong>$permission->name</strong> has successfully been created.");
+        return redirect()->route('permissions.index')->with('success', "The Permission <strong>$permission->name</strong> has successfully been created.");
     }
 
     // Permission Delete Confirmation Page
@@ -68,7 +68,7 @@ class PermissionController extends Controller
                 'permission' => $permission,
             ];
 
-            return view('admin.permission.perm_delete')->with($params);
+            return view('admin.permissions.perm_delete')->with($params);
         } catch (ModelNotFoundException $ex) {
             if ($ex instanceof ModelNotFoundException) {
                 return response()->view('errors.' . '404');
@@ -90,7 +90,7 @@ class PermissionController extends Controller
 
             //dd($role_permissions);
 
-            return view('admin.permission.perm_edit')->with($params);
+            return view('admin.permissions.perm_edit')->with($params);
         } catch (ModelNotFoundException $ex) {
             if ($ex instanceof ModelNotFoundException) {
                 return response()->view('errors.' . '404');
@@ -116,7 +116,7 @@ class PermissionController extends Controller
 
             $permission->save();
 
-            return redirect()->route('permission.index')->with('success', "The permission <strong>$permission->name</strong> has successfully been updated.");
+            return redirect()->route('permissions.index')->with('success', "The permission <strong>$permission->name</strong> has successfully been updated.");
         } catch (ModelNotFoundException $ex) {
             if ($ex instanceof ModelNotFoundException) {
                 return response()->view('errors.' . '404');
@@ -133,7 +133,7 @@ class PermissionController extends Controller
             DB::table("permission_role")->where('permission_id', $id)->delete();
             $permission->delete();
             
-            return redirect()->route('permission.index')->with('success', "The Role <strong>$permission->name</strong> has successfully been archived.");
+            return redirect()->route('permissions.index')->with('success', "The Role <strong>$permission->name</strong> has successfully been archived.");
         } catch (ModelNotFoundException $ex) {
             if ($ex instanceof ModelNotFoundException) {
                 return response()->view('errors.' . '404');

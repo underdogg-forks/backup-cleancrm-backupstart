@@ -21,20 +21,22 @@ Route::get('/admin', function () {
 
 Auth::routes();
 
-// Dashboard
-//Route::get('/dashboard', 'HomeController@index')->name('dashboard');
-Route::get('dashboard', ['uses' => 'HomeController@index', 'as' => 'dashboard.index']);
-
-
 
 // Administrator & owner Control Panel Routes
-Route::group(['prefix' => '', 'middleware' => 'auth', 'middleware' => ['role:administrator|owner'], 'namespace' => 'Admin'], function () {
+Route::group(['prefix' => 'admincp', 'middleware' => 'auth', 'middleware' => ['role:administrator|owner'], 'namespace' => 'Admin'], function () {
+
+
+// Dashboard
+//Route::get('/dashboard', 'HomeController@index')->name('dashboard');
+    Route::get('/', ['uses' => 'AdminCPController@index', 'as' => 'dashboard.index']);
+    Route::get('dashboard', ['uses' => 'AdminCPController@index', 'as' => 'dashboard.index']);
+
 
     Route::get('permissions', ['uses' => 'PermissionsController@index', 'as' => 'permissions.index']);
 
 
 
     Route::resource('users', 'UsersController');
-    Route::resource('permission', 'PermissionController');
+    Route::resource('permissions', 'PermissionsController');
     Route::resource('roles', 'RolesController');
 });

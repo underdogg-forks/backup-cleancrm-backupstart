@@ -1,4 +1,4 @@
-{{-- @include('layouts._authheader'); --}}
+@extends('layouts.frontpages')
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
     <head>
@@ -20,7 +20,7 @@
     <!-- Custom styles for this template -->
     <link href="{{ asset('css/signin.css') }}" rel="stylesheet">
     <!-- Styles -->
-    <!-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
   </head>
   <body class="text-center">
     <div id="app">

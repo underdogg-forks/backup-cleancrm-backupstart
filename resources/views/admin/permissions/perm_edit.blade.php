@@ -6,9 +6,9 @@
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
         <h1 class="h2">Permissions</h1>
     </div>
-    <a class="btn btn-sm btn-primary" href="{{route('permission.index')}}">Back</a>
+    <a class="btn btn-sm btn-primary" href="{{route('permissions.index')}}">Back</a>
     <h2>{{$title}}</h2>
-    <form method="post" action="{{ route('permission.update', ['id' => $permission->id]) }}" data-parsley-validate class="form-horizontal form-label-left">
+    <form method="post" action="{{ route('permissions.update', ['id' => $permission->id]) }}" data-parsley-validate class="form-horizontal form-label-left">
 
         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }} row">
             <label for="name" class="col-sm-2 col-form-label">Name</label>

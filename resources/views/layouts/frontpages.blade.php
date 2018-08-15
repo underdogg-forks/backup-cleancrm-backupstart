@@ -16,6 +16,12 @@
 
     @yield('javascript')
 
+<!-- Custom styles for this template -->
+    <link href="{{ asset('css/signin.css') }}" rel="stylesheet">
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+
     <!-- Custom styles for this template -->
     <link href="{{ asset('css/cover.css') }}" rel="stylesheet">
 
@@ -25,11 +31,11 @@
 </head>
 <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
 
-@include('layouts._header')
+{{--@include('layouts._header')--}}
 
 <div class="app-body">
 
-    @include('layouts._sidebar')
+    {{--@include('layouts._sidebar')--}}
 
     <main class="main">
         <div class="container-fluid pt-3">
